@@ -1,7 +1,7 @@
 FROM node:6.11.0-alpine
 
-COPY yarn.lock package.json /opt/wao/
-WORKDIR /opt/wao
+COPY yarn.lock package.json /opt/bangen/
+WORKDIR /opt/bangen
 RUN yarn install
 
-CMD ["yarn", "run", "dev"]
+CMD ["yarn", "dev"]

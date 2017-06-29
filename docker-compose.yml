@@ -3,7 +3,7 @@ services:
   bangen:
     build: .
     volumes:
-      - ./src:/opt/wao/src
+      - ./src:/opt/bangen/src
     environment:
       - LOG_FORMAT=text
     ports:
