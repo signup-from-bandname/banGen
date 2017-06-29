@@ -17,6 +17,9 @@
         "exports": "always-multiline",
         "functions": "never"
       }
-    ]
+    ],
+    "max-len": "off",
+    "arrow-parens": "off",
+    "arrow-body-style": "off"
   }
 }

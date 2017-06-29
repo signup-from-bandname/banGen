@@ -21,6 +21,7 @@
     "body-parser": "^1.17.2",
     "cybersquatt": "^0.1.1",
     "express": "^4.15.3",
+    "metal-name": "^1.2.0",
     "morgan": "^1.8.2",
     "powerthesaurus-api": "^1.0.1",
     "winston": "^2.3.1"
