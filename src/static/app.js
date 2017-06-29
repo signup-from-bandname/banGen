@@ -2,7 +2,8 @@
 
 function inner(value) {
   return Object.keys(value).map((key) => {
-    return `<li>${key}: ${value[key]}</li>`
+    const className = value[key] ? 'available' : 'taken'
+    return `<li class=${className}>${key}</li>`
   }).join('')
 }
 
