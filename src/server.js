@@ -10,7 +10,7 @@ class Server {
   constructor() {
     this.application = express()
     this.router = express.Router()
-    this.port = process.env.PORT || 666
+    this.port = process.env.PORT || 8008
 
     this.application.use(logger.middleware)
     this.application.use(bodyParser.json({ limit: '5mb' }))
