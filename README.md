@@ -8,6 +8,7 @@ Die Verfügbarkeitsprüfung sollte auch für allerhand andere Anwendungen nutzba
 
     docker-compose up
 
-## Start Unit Testing
+Or run it locally:
 
-    docker-compose -f docker-compose.tests.yml up
+    yarn
+    yarn dev
