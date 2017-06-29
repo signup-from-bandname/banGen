@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bangen:
+    build: .
+    volumes:
+      - ./src:/opt/wao/src
+    environment:
+      - LOG_FORMAT=text
+    ports:
+      - 666:666
+    tty: true
