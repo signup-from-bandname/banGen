@@ -25,14 +25,20 @@
   </style>
 </head>
 <body>
-hello world!
+<h1>banGen</h1>
 
-<form id="gen" action='/v1/names' method='GET'>
+Some ideas, click on one you like:
+<ul id='ideas'></ul>
+<button id='moreIdeas' type='button'>More Ideas</button>
+
+<form id='names' action='/v1/names' method='GET'>
+  Load synonyms
   <input name='bandname' value='inputSomething'>
   <input type="submit" value='Submit'>
 </form>
 
 <form id="check" action='/v1/check' method='GET'>
+  Check availibility
   <input name='bandname' value='charge'>
   <input type="submit" value='Submit'>
 </form>
