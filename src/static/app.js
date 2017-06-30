@@ -187,7 +187,6 @@ function createLogo() {
 }
 
 $('#ideas').on('click', 'li', (event) => {
-  // TODO convert to valid hostname(?)
   $('#names input[name=bandname]').val($(event.target).text())
   $('#check input[name=bandname]').val($(event.target).text())
 })
