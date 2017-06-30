@@ -18,8 +18,10 @@ function innerSuggestion(value) {
 }
 
 function renderSuggestions(result) {
+  let i=0
   $('#suggestionsOutput').html(Object.keys(result).map((value) => {
-    return `<li class="suggestionList"><ul>${innerSuggestion(result[value])}</ul></li>`
+    i++
+    return `<li num=${i} class="suggestionList"><ul>${innerSuggestion(result[value])}</ul></li>`
   }).join(''))
 }
 
@@ -36,6 +38,24 @@ getNames()
 $('#ideas').on('click', 'li', (event) => {
   // TODO convert to valid hostname(?)
   $('#names input[name=bandname]').val($(event.target).text())
+  let j = 0
+  $('#originalInput').html($(event.target).text().split(' ').map((name) => {
+    j++
+    return `<li><ul data-current="${name}"><li num="${j}">${name}</li></ul></li>`
+  }).join(''))
+})
+
+let filters = [];
+let saveObject;
+let checkInput = $('#check input[name=bandname]');
+console.log($(["data-current"]))
+$("body").on('click', 'li', (event) => {
+  let newFilter = $(event.target).parent().parent().find('.active')
+  let getActives = []
+  newFilter.removeClass("active")
+  $(event.target).addClass("active");
+
+
 })
 
 $('#check').on('submit', (event) => {
