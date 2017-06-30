@@ -1,7 +1,7 @@
 function innerCheck(value) {
   return Object.keys(value).map((key) => {
-    const className = value[key] ? 'available' : 'taken'
-    return `<li class=${className}>${key}</li>`
+    const className = value[key] ? 'fa fa-check available' : 'fa fa-remove taken'
+    return `<li class="${className}">${key}</li>`
   }).join('')
 }
 

@@ -6,9 +6,17 @@ ul {
   display: flex;
 }
 #checkOutput ul li {
-  width: 21%;
+  width: 100%;
   padding: 10px;
+  margin: 4px;
 }
+.fa-remove:before, .fa-close:before, .fa-times:before{
+  margin-right: 5px;
+}
+.fa-check:before {
+  margin-right: 5px;
+}
+
 #suggestionsOutput {
   display: flex;
   margin-top: 1em;
