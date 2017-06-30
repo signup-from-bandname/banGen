@@ -10,7 +10,10 @@ module.exports = (router) => {
     }
     logger.debug('check for', name)
     cybersquatt(name).then((result) => {
-      res.json(result)
+      res.json({
+        name,
+        result,
+      })
     })
   })
 }

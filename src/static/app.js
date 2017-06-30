@@ -5,7 +5,11 @@ function innerCheck(value) {
   }).join('')
 }
 
-function renderCheck(result) {
+function renderCheck(bandname, { name, result }) {
+  const nameOutput = $('#checkedName').empty()
+  if (bandname !== name) {
+    nameOutput.html(`Checked name: ${name}`)
+  }
   $('#checkOutput').html(Object.keys(result).map((key) => {
     return `<li>${key}<ul>${innerCheck(result[key])}</ul></li>`
   }).join(''))
@@ -198,7 +202,9 @@ $('#check').on('submit', (event) => {
   const bandname = $(event.target).find('[name=bandname]').val()
   $.get(url, {
     bandname,
-  }).then(renderCheck)
+  }).then((result) => {
+    renderCheck(bandname, result)
+  })
   createLogo()
 })
 
