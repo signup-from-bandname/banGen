@@ -13,6 +13,21 @@ function render(result) {
   }).join(''))
 }
 
+function getNames() {
+  $.get('/v1/name-ideas').then((result) => {
+    $('#ideas').html(result.names.map((name) => {
+      return `<li>${name}</li>`
+    }).join(''))
+  })
+}
+$('#moreIdeas').click(getNames)
+getNames()
+
+$('#ideas').on('click', 'li', (event) => {
+  // TODO convert to valid hostname(?)
+  $('#names input[name=bandname]').val($(event.target).text())
+})
+
 $('form').on('submit', (event) => {
   event.preventDefault()
   $('#output').html('<li>loading...</li>')
