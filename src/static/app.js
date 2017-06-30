@@ -35,6 +35,9 @@ getNames()
 
 function renderLogo(result) {
   const out = document.querySelector('#logo')
+  if (out.childElementCount > 0) {
+    out.removeChild(out.childNodes[0])
+  }
   const elem = document.createElement('img')
   elem.setAttribute('alt', 'Logo')
   elem.setAttribute('src', result.src)
@@ -44,7 +47,36 @@ function renderLogo(result) {
 function createLogo() {
   const imageGenUrl = 'http://flamingtext.com/net-fu/image_output.cgi'
   const text = document.querySelector('#check input[name=bandname]').value
-  const fontname = 'Metal Lord'
+  const fonts = [
+    'Aegis',
+    'Aladdin',
+    'Antikythera',
+    'Bizarre',
+    'Blood Crow',
+    'Bloodlust',
+    'Colossus',
+    'Cro-Magnum',
+    'Cry Uncial',
+    'Cyrus the Virus',
+    'Dark Garden',
+    'Diablo Heavy',
+    'Dragon Order',
+    'GoodCityModern',
+    'Holy Empire',
+    'Judge Hard',
+    'Mael',
+    'Metal Lord',
+    'Monsterama',
+    'Odinson',
+    'Riot Act',
+    'Squealer Embossed',
+    'Timberwolf',
+    'War Priest',
+    'Wetworks',
+    'Wolf\'s Bane',
+  ]
+
+  const fontname = fonts[Math.floor(Math.random() * (fonts.length))]
   $.get(imageGenUrl, {
     _comBuyRedirect: 'false',
     script: 'heavy-metal-logo',
