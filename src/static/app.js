@@ -190,6 +190,8 @@ $('#check').on('submit', (event) => {
   createLogo()
 })
 
+$('#logocreator').on('click', createLogo)
+
 $('#names').on('submit', (event) => {
   event.preventDefault()
   $('#suggestionsOutput').html('<li>loading...</li>')
