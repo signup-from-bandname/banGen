@@ -3,7 +3,7 @@ const logger = require('../logger')
 
 module.exports = (router) => {
   router.use('/v1/check', (req, res, next) => {
-    const name = req.query.bandname
+    const name = req.query.bandname.replace(/[ .\\/"']/g, '-').toLowerCase()
     if (!name) {
       next(new Error('missing bandname query parameter'))
       return
