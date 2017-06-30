@@ -85,7 +85,7 @@
       font-size: 2em;
       margin: 0.5em;
       padding: 1em;
-      width: 350px;
+      width: 500px;
       color: #999;
       background: black;
       text-align: center;
@@ -158,7 +158,7 @@
                 <button class="btn btn-default btn-lg" id='moreIdeas'>Generate a new set</button>
                 <form id='names' action='/v1/names' method='GET'>
                   <h4>Load synonyms</h4>
-                  <input type="text" class="form-control" name='bandname' value='charge'>
+                  <input type="text" class="form-control" name='bandname' value=''>
                   <button class="btn btn-default">Create synonyms</button>
                 </form>
 
@@ -175,7 +175,7 @@
                     <h2>Analyse</h2>
                     <p>Check for domains, social media and do an internet background check.</p>
                     <form id="check" action='/v1/check' method='GET'>
-                      <input type="text" class="form-control" name='bandname' value='charge'>
+                      <input type="text" class="form-control" name='bandname' value=''>
                       <button type="submit" class="btn btn-default btn-lg">Check availibility</button>
                     </form>
                     <h5 id='checkedName'></h5>
