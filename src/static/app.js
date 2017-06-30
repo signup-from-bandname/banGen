@@ -17,10 +17,21 @@ function innerSuggestion(value) {
   }).join('')
 }
 
+function addSuggestionHandler() {
+  $('.suggestionList li').on('click', event => {
+    const sibling = $(event.target).parent().find('.active')
+    sibling.removeClass('active')
+    $(event.target).addClass('active')
+    $('#check input[name=bandname]').val(checkInput.val().replace(sibling.text(), $(event.target).text()))
+  })
+}
+
 function renderSuggestions(result) {
-  $('#suggestionsOutput').html(Object.keys(result).map((value) => {
-    return `<li class="suggestionList"><ul>${innerSuggestion(result[value])}</ul></li>`
+  const existing = document.querySelector('[name=bandname]').value.split(' ')
+  $('#suggestionsOutput').html(Object.keys(result).map((value, idx) => {
+    return `<li class="suggestionList"><ul><li class="active">${existing[idx]}</li>${innerSuggestion(result[value])}</ul></li>`
   }).join(''))
+  addSuggestionHandler()
 }
 
 function getNames() {
@@ -177,6 +188,7 @@ function createLogo() {
 $('#ideas').on('click', 'li', (event) => {
   // TODO convert to valid hostname(?)
   $('#names input[name=bandname]').val($(event.target).text())
+  $('#check input[name=bandname]').val($(event.target).text())
 })
 
 $('#check').on('submit', (event) => {
