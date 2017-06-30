@@ -225,5 +225,13 @@ $('#names').on('submit', (event) => {
   })
 })
 
+$('#getsynonyms').on('click', () => {
+  $('#submit').click();
+});
+
+$('#analyse').on('click', () => {
+  $('#checkavail').click();
+});
+
 // const fixture = JSON.parse('{"domains":{"com":false,"org":false,"net":true,"info":false},"socials":{"facebook":true,"twitter":false,"github":false}}')
 // renderCheck(fixture)
