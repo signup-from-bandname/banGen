@@ -12,6 +12,7 @@ module.exports = (router) => {
     				return data.word
   				})
 			})
+			console.log(wordlist)
 			res.json(wordlist)
 		})
 		.catch(error => console.error(error.stack))

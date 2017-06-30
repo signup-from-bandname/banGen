@@ -27,17 +27,18 @@
 <body>
 hello world!
 
-<form action='/v1/names' method='GET'>
+<form id="gen" action='/v1/names' method='GET'>
   <input name='bandname' value='inputSomething'>
   <input type="submit" value='Submit'>
 </form>
 
-<form action='/v1/check' method='GET'>
+<form id="check" action='/v1/check' method='GET'>
   <input name='bandname' value='charge'>
   <input type="submit" value='Submit'>
 </form>
 
 <ul id='output'></ul>
+<ul id='output2'></ul>
 
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src='app.js'></script>

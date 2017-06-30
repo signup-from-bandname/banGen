@@ -13,9 +13,20 @@ function render(result) {
   }).join(''))
 }
 
-$('form').on('submit', (event) => {
+
+$('#check').on('submit', (event) => {
   event.preventDefault()
   $('#output').html('<li>loading...</li>')
+  const url = $(event.target).attr('action')
+  const bandname = $(event.target).find('[name=bandname]').val()
+  $.get(url, {
+    bandname,
+  }).then(render)
+})
+
+$('#id').on('submit', (event) => {
+  event.preventDefault()
+  $('#output2').html('<li>loading...</li>')
   const url = $(event.target).attr('action')
   const bandname = $(event.target).find('[name=bandname]').val()
   $.get(url, {
