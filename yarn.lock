@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@jzaefferer/metal-name@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@jzaefferer/metal-name/-/metal-name-1.2.0.tgz#d18f06de3b4d7bdec674011f96eb7a9a154bc6d1"
+  dependencies:
+    lodash "^3.3.0"
+    meow "^2.1.0"
+
 abab@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"
@@ -1722,13 +1729,6 @@ meow@^2.1.0:
 merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
-
-metal-name@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/metal-name/-/metal-name-1.2.0.tgz#cd7089d23328bcc0d502ab0246184c158c241b27"
-  dependencies:
-    lodash "^3.3.0"
-    meow "^2.1.0"
 
 methods@~1.1.2:
   version "1.1.2"
