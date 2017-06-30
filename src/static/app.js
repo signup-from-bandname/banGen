@@ -7,7 +7,6 @@ function inner(value) {
 
 function inner2(value) {
   return Object.values(value).map((key) => {
-    const className = value[key] ? 'available' : 'taken'
     return `<li>${key}</li>`
   }).join('')
 }
@@ -54,7 +53,6 @@ $('#names').on('submit', (event) => {
   event.preventDefault()
   $('#output2').html('<li>loading...</li>')
   const url = $(event.target).attr('action')
-  console.log(event.target)
   const bandname = $(event.target).find('[name=bandname]').val()
   $.get(url, {
     bandname,
