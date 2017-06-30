@@ -8,13 +8,23 @@
     ul {
       list-style-type: none;
     }
-    ul ul {
+    #checkOutput ul {
       display: flex;
     }
-    ul ul li {
+    #checkOutput ul li {
       width: 21%;
       border: 5px solid white;
       padding: 10px;
+    }
+    #suggestionsOutput {
+      display: flex;
+
+    }
+    #suggestionsOutput > li {
+      width: 20%;
+    }
+    #suggestionsOutput ul li {
+      border: 1px solid black;
     }
     .available {
       background-color: green;
@@ -43,8 +53,8 @@ Some ideas, click on one you like:
   <input type="submit" value='Submit'>
 </form>
 
-<ul id='output'></ul>
-<ul id='output2'></ul>
+<ul id='suggestionsOutput'></ul>
+<ul id='checkOutput'></ul>
 
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src='app.js'></script>
