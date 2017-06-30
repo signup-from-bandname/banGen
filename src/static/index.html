@@ -58,6 +58,21 @@
           margin-top: 150px;
       }
     }
+    h4 {
+      margin: 2em;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    input[type=text] {
+      font-size: 2em;
+      margin: 1em;
+      width: 250px;
+      color: #999;
+      background: black;
+    }
   </style>
 </head>
 <body>
@@ -125,8 +140,8 @@
                 </ul>
                 <button class="btn btn-default btn-lg" id='moreIdeas'>Generate a new set</button>
                 <form id='names' action='/v1/names' method='GET'>
-                  Load synonyms
-                  <input class="form-control" name='bandname' value='inputSomething'>
+                  <h4>Load synonyms</h4>
+                  <input type="text" class="form-control" name='bandname' value='inputSomething'>
                   <button class="btn btn-default">Submit</button>
                 </form>
 
@@ -142,8 +157,7 @@
                     <h2>Analyse</h2>
                     <p>Check for domains, social media and do an internet background check.</p>
                     <form id="check" action='/v1/check' method='GET'>
-                      Check availibility
-                      <input class="form-control" name='bandname' value='charge'>
+                      <input type="text" class="form-control" name='bandname' value='charge'>
                       <button type="submit" class="btn btn-default btn-lg">Check availibility</button>
                     </form>
                     <ul id='checkOutput'></ul>
