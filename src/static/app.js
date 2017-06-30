@@ -194,12 +194,17 @@ $('#logocreator').on('click', createLogo)
 
 $('#names').on('submit', (event) => {
   event.preventDefault()
-  $('#suggestionsOutput').html('<li>loading...</li>')
+  const out = $('#suggestionsOutput')
+  out.html('<li>loading...</li>')
   const url = $(event.target).attr('action')
   const bandname = $(event.target).find('[name=bandname]').val()
   $.get(url, {
     bandname,
   }).then(renderSuggestions)
+  .fail(e => {
+    out.html('<li>Something went wrong, sorry...</li>')
+    console.error(e) // eslint-disable-line no-console
+  })
 })
 
 // const fixture = JSON.parse('{"domains":{"com":false,"org":false,"net":true,"info":false},"socials":{"facebook":true,"twitter":false,"github":false}}')
