@@ -17,14 +17,12 @@ function innerSuggestion(value) {
   }).join('')
 }
 
-const checkInput = $('#check input[name=bandname]')
-
 function addSuggestionHandler() {
   $('.suggestionList li').on('click', event => {
     const sibling = $(event.target).parent().find('.active')
     sibling.removeClass('active')
     $(event.target).addClass('active')
-    checkInput.val(checkInput.val().replace(sibling.text(), $(event.target).text()))
+    $('#check input[name=bandname]').val(checkInput.val().replace(sibling.text(), $(event.target).text()))
   })
 }
 
