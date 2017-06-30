@@ -42,6 +42,9 @@
     #logo {
       width: 100%;
     }
+    #logo img {
+      width: 100%;
+    }
     .btn-default {
       border: 1px solid #dc4242;
       color: #dc4242;
@@ -142,10 +145,11 @@
                 <form id='names' action='/v1/names' method='GET'>
                   <h4>Load synonyms</h4>
                   <input type="text" class="form-control" name='bandname' value='inputSomething'>
-                  <button class="btn btn-default">Submit</button>
+                  <button class="btn btn-default">Create synonyms</button>
                 </form>
 
                 <ul id='suggestionsOutput'></ul>
+                <a class="page-scroll btn btn-default" href="#analyse">Analyse</a>
             </div>
         </div>
     </section>
