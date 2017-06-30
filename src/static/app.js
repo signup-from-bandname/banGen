@@ -25,9 +25,11 @@ function addSuggestionHandler() {
   const check = $('#check input[name=bandname]')
   $('.suggestionList li').on('click', event => {
     const sibling = $(event.target).parent().find('.active')
+    const content = check.val().replace(sibling.text(), $(event.target).text())
     sibling.removeClass('active')
     $(event.target).addClass('active')
-    check.val(check.val().replace(sibling.text(), $(event.target).text()))
+    check.val(content)
+    $('#names input[name=bandname]').val(content)
   })
 }
 
@@ -40,6 +42,9 @@ function renderSuggestions(result) {
 }
 
 function getNames() {
+  // empty the synonyms
+  $('#suggestionsOutput').html('<li></li>')
+  $('#checkOutput').html('<li></li>')
   $.get('/v1/name-ideas').then((result) => {
     $('#ideas').html(result.names.map((name) => {
       return `<li>${name}</li>`
@@ -191,6 +196,8 @@ function createLogo() {
 }
 
 $('#ideas').on('click', 'li', (event) => {
+  // empty the synonyms
+  $('#suggestionsOutput').html('<li></li>')
   $('#names input[name=bandname]').val($(event.target).text())
   $('#check input[name=bandname]').val($(event.target).text())
 })
