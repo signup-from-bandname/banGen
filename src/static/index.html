@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>banGen</title>
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="vendor/grayscale.min.css" rel="stylesheet">
   <style>
     ul {
       list-style-type: none;
@@ -13,7 +18,6 @@
     }
     #checkOutput ul li {
       width: 21%;
-      border: 5px solid white;
       padding: 10px;
     }
     #suggestionsOutput {
@@ -38,40 +42,141 @@
     #logo {
       width: 100%;
     }
+    .btn-default {
+      border: 1px solid #dc4242;
+      color: #dc4242;
+      background-color: transparent;
+    }
+    .btn-default:focus, .btn-default:hover {
+      border: 1px solid #dc4242;
+      background-color: #f51717;
+    }
+
+    @media (min-width: 767px) {
+      .content-section {
+          padding-top: 100px;
+          margin-top: 150px;
+      }
+    }
   </style>
 </head>
 <body>
-<h1>banGen</h1>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-Some ideas, click on one you like:
-<ul id='ideas'></ul>
-<button id='moreIdeas' type='button'>More Ideas</button>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">ban</span>Gen
+                </a>
+            </div>
 
-<form id='names' action='/v1/names' method='GET'>
-  Load synonyms
-  <input name='bandname' value='inputSomething'>
-  <input type="submit" value='Submit'>
-</form>
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#generate">Generate</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#analyse">Analyse</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#visualize">Visualize</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<form id="check" action='/v1/check' method='GET'>
-  Check availibility
-  <input name='bandname' value='charge'>
-  <input type="submit" value='Submit'>
-  <input type="button" id="logocreator" value='Logo'>
-</form>
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">banGen</h1>
+                        <p class="intro-text">Generate metal band names.
+                            <br>Analyse their availibility, create a logo.</p>
+                        <a href="#generate" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<div id="logo"></div>
+    <section id="generate" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Generate</h2>
+                <p>Here are some initial suggestions:</p>
+                <ul>
+                  <li>Lucifer's Donut
+                    <button type='button' class='btn btn-default btn-sm'>get synonyms</button>
+                    <button type='button' class='btn btn-default btn-sm'>analyse</button>
+                  </li>
+                </ul>
+                <ul id='ideas'>
+                </ul>
+                <button class="btn btn-default btn-lg" id='moreIdeas'>Generate a new set</button>
+                <form id='names' action='/v1/names' method='GET'>
+                  Load synonyms
+                  <input class="form-control" name='bandname' value='inputSomething'>
+                  <button class="btn btn-default">Submit</button>
+                </form>
 
-<ul id='suggestionsOutput'></ul>
-<ul id='checkOutput'></ul>
+                <ul id='suggestionsOutput'></ul>
+            </div>
+        </div>
+    </section>
 
-<div id='root'></div>
+    <section id="analyse" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Analyse</h2>
+                    <p>Check for domains, social media and do an internet background check.</p>
+                    <form id="check" action='/v1/check' method='GET'>
+                      Check availibility
+                      <input class="form-control" name='bandname' value='charge'>
+                      <button type="submit" class="btn btn-default btn-lg">Check availibility</button>
+                    </form>
+                    <ul id='checkOutput'></ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script src="https://unpkg.com/react@latest/dist/react.js"></script>
-<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
-<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<script src='app.js'></script>
-<script type="text/babel" src='test.jsx'></script>
+    <section id="visualize" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Visulize</h2>
+                <p>Got a name you liked? Generate some logo ideas.</p>
+                </p>
+                <div id="logo" style="height: 127px"></div>
+                <button type="button" id="logocreator" class="btn btn-default btn-lg">VISUALIZE</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="analyse" class="content-section text-center">
+        <img src="img/storm.jpg" style="width:100%">
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <p>MIT, woodhack 2017</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src='vendor/theme-support.js'></script>
+    <script src='app.js'></script>
 </body>
 </html>
