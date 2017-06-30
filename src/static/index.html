@@ -12,6 +12,7 @@
   <style>
     ul {
       list-style-type: none;
+      padding-left: 0;
     }
     #checkOutput ul {
       display: flex;
@@ -22,10 +23,10 @@
     }
     #suggestionsOutput {
       display: flex;
-
+      margin-top: 1em;
     }
     #suggestionsOutput > li {
-      width: 20%;
+      width: 100%;
     }
     #suggestionsOutput ul li {
       border: 1px solid black;
@@ -36,8 +37,11 @@
     .taken {
       background-color: red;
     }
+    .default {
+        background: darkred;
+    }
     .active {
-      background-color: green;
+      background-color: red;
     }
     #logo {
       width: 100%;
@@ -63,6 +67,11 @@
           padding-top: 100px;
           margin-top: 150px;
       }
+    }
+    #ideas li:hover, #suggestionsOutput li li:hover {
+        background: red;
+        cursor: pointer;
+        /* TODO: use pommesgabel as cursor */
     }
     h4, h5 {
       margin: 2em;
@@ -138,12 +147,12 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Generate</h2>
                 <p>Here are some initial suggestions:</p>
-                <ul>
+                <!--<ul>
                   <li>Lucifer's Donut
                     <button type='button' class='btn btn-default btn-sm'>get synonyms</button>
                     <button type='button' class='btn btn-default btn-sm'>analyse</button>
                   </li>
-                </ul>
+                </ul>-->
                 <ul id='ideas'>
                 </ul>
                 <button class="btn btn-default btn-lg" id='moreIdeas'>Generate a new set</button>
