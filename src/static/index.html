@@ -71,7 +71,8 @@
     }
     input[type=text] {
       font-size: 2em;
-      margin: 1em;
+      margin: 0.5em;
+      padding: 1em;
       width: 250px;
       color: #999;
       background: black;
@@ -144,7 +145,7 @@
                 <button class="btn btn-default btn-lg" id='moreIdeas'>Generate a new set</button>
                 <form id='names' action='/v1/names' method='GET'>
                   <h4>Load synonyms</h4>
-                  <input type="text" class="form-control" name='bandname' value='inputSomething'>
+                  <input type="text" class="form-control" name='bandname' value='charge'>
                   <button class="btn btn-default">Create synonyms</button>
                 </form>
 
@@ -177,8 +178,8 @@
                 <h2>Visulize</h2>
                 <p>Got a name you liked? Generate some logo ideas.</p>
                 </p>
-                <div id="logo" style="height: 127px"></div>
                 <button type="button" id="logocreator" class="btn btn-default btn-lg">VISUALIZE</button>
+                <div id="logo" style="height: 127px"></div>
             </div>
         </div>
     </section>
