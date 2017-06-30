@@ -1,0 +1,80 @@
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#checkOutput ul {
+  display: flex;
+}
+#checkOutput ul li {
+  width: 21%;
+  padding: 10px;
+}
+#suggestionsOutput {
+  display: flex;
+  margin-top: 1em;
+}
+#suggestionsOutput > li {
+  width: 100%;
+}
+#suggestionsOutput ul li {
+  border: 1px solid black;
+}
+.available {
+  background-color: green;
+}
+.taken {
+  background-color: red;
+}
+.default {
+    background: darkred;
+}
+.active {
+  background-color: red;
+}
+#logo {
+  width: 100%;
+}
+#logo img {
+  width: 100%;
+}
+.list-group-item {
+  color: black;
+}
+.btn-default {
+  border: 1px solid #dc4242;
+  color: #dc4242;
+  background-color: transparent;
+}
+.btn-default:focus, .btn-default:hover {
+  border: 1px solid #dc4242;
+  background-color: #f51717;
+}
+
+@media (min-width: 767px) {
+  .content-section {
+      padding-top: 100px;
+      margin-top: 150px;
+  }
+}
+#ideas li:hover, #suggestionsOutput li li:hover {
+  background: red;
+  cursor: pointer;
+  /* TODO: use pommesgabel as cursor */
+}
+h4, h5 {
+  margin: 2em;
+}
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+input[type=text] {
+  font-size: 2em;
+  margin: 0.5em;
+  padding: 1em;
+  width: 500px;
+  color: #999;
+  background: black;
+  text-align: center;
+}
