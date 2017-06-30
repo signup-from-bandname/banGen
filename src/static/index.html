@@ -35,6 +35,9 @@
     .active {
       background-color: green;
     }
+    #logo {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -54,12 +57,21 @@ Some ideas, click on one you like:
   Check availibility
   <input name='bandname' value='charge'>
   <input type="submit" value='Submit'>
+  <input type="button" id="logocreator" value='Logo'>
 </form>
+
+<div id="logo"></div>
 
 <ul id='suggestionsOutput'></ul>
 <ul id='checkOutput'></ul>
 
+<div id='root'></div>
+
+<script src="https://unpkg.com/react@latest/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script src='app.js'></script>
+<script type="text/babel" src='test.jsx'></script>
 </body>
 </html>

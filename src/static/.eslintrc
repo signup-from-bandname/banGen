@@ -1,9 +1,15 @@
 {
   "extends": "../.eslintrc",
+  "parser": "babel-eslint",
   "env": {
     "browser": true
   },
   "globals": {
-    "$": true
+    "$": true,
+    "React": true,
+    "ReactDOM": true
+  },
+  "rules": {
+    "class-methods-use-this": "off"
   }
 }
