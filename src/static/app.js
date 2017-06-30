@@ -17,17 +17,17 @@ function renderCheck(bandname, { name, result }) {
 
 function innerSuggestion(value) {
   return Object.values(value).map((key) => {
-    return `<li>${key}</li>`
+    return `<li class="list-group-item">${key}</li>`
   }).join('')
 }
 
 function addSuggestionHandler() {
   const check = $('#check input[name=bandname]')
   $('.suggestionList li').on('click', event => {
-    const sibling = $(event.target).parent().find('.active')
+    const sibling = $(event.target).parent().find('.list-group-item-success')
     const content = check.val().replace(sibling.text(), $(event.target).text())
-    sibling.removeClass('active')
-    $(event.target).addClass('active')
+    sibling.removeClass('list-group-item-success')
+    $(event.target).addClass('list-group-item-success')
     check.val(content)
     $('#names input[name=bandname]').val(content)
   })
@@ -36,7 +36,7 @@ function addSuggestionHandler() {
 function renderSuggestions(result) {
   const existing = document.querySelector('[name=bandname]').value.split(' ')
   $('#suggestionsOutput').html(Object.keys(result).map((value, idx) => {
-    return `<li class="suggestionList"><ul><li class="active">${existing[idx]}</li>${innerSuggestion(result[value])}</ul></li>`
+    return `<li class="suggestionList"><ul class="list-group"><li class="list-group-item list-group-item-success">${existing[idx]}</li>${innerSuggestion(result[value])}</ul></li>`
   }).join(''))
   addSuggestionHandler()
 }
