@@ -1,4 +1,4 @@
-const metalName = require('@jzaefferer/metal-name')
+const metalName = require('metal-name')
 
 module.exports = (router) => {
   router.use('/v1/name-ideas', (req, res) => {
