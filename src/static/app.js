@@ -22,8 +22,8 @@ function innerSuggestion(value) {
 }
 
 function addSuggestionHandler() {
-  const check = $('#check input[name=bandname]')
   $('.suggestionList li').on('click', event => {
+    const check = $('#check input[name=bandname]')
     const sibling = $(event.target).parent().find('.active')
     const content = check.val().replace(sibling.text(), $(event.target).text())
     sibling.removeClass('active')
@@ -216,6 +216,14 @@ $('#check').on('submit', (event) => {
 })
 
 $('#logocreator').on('click', createLogo)
+
+$('#names input[name=bandname]').on('blur', () => {
+  // empty the synonyms
+  $('#suggestionsOutput').html('<li></li>')
+  $('#names').submit()
+}).on('input', () => {
+  $('#suggestionsOutput').html('<li></li>')
+})
 
 $('#names').on('submit', (event) => {
   event.preventDefault()
